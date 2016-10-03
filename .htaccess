@@ -1,0 +1,30 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+# asegurando el archivo htaccess
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+ErrorDocument 403 /App/vistas/errores/403.php
+ErrorDocument 404 /App/vistas/errores/404.php
+ErrorDocument 500 /App/vistas/errores/500.php
+
+RewriteBase /
+
+#Redirigir el dominio sin www a www  
+#RewriteCond %{HTTP_REFERER} !^http://tudominio.com.*$ [NC] [OR]
+
+Options -Indexes +FollowSymlinks
+#### CASOS GENERALES de URLs amigables ####
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^(.+)/pagina/(.+)/service\.html$ index.php?url=$1&pagina=$2&service=$3 [QSA,L,NC]
+RewriteRule ^(.+)/pagina/(.+)\.html$ index.php?url=$1&pagina=$2 [QSA,L,NC]
+RewriteRule ^(.+)/service\.html$ index.php?url=$1&service=$2 [QSA,L,NC]
+RewriteRule ^(.+)\.html$ index.php?url=$1 [QSA,L,NC]
+
+# disable directory browsing
+#Options All -Indexes

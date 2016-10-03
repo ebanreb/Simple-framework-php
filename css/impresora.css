@@ -1,0 +1,5 @@
+body { background-color:transparent;}
+table{background: transparent !important;}
+div#container{box-shadow: none; border: 0px;border-radius: 0px;}
+div#container table{border: 0px !important;}
+div#nav_menu,div#sub_nav_menu{/*display: none !important;*/background: none;}

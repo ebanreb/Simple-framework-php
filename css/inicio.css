@@ -1,0 +1,85 @@
+/* Makeshift CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 22px 0;
+	font: 13px Times New Roman, Arial, sans-serif;
+	/*background: #FFFFE0;*/
+	background: url("../images/Fondo.jpg");
+	behavior:url("csshover3.htc");/*li:hover IE6 ¬¬*/
+}
+
+img{
+border:0;
+}
+
+#container{
+  width:900px;
+  margin:0 auto;
+}
+#header{
+ height:100px;
+ text-align:center;
+ color:#FFFFFF;
+ font-weight:bold;
+ margin:0 0 50px 0;
+ font-size:22px;
+}
+#header table{
+  width:100%;
+}
+#header h1{
+  color:#000066;
+  font-size:50px;
+  font-family:Courier New, Courier, mono,Times New Roman, Arial, sans-serif;
+}
+#header h4{
+  color:#ff0000; 
+  font-family:Georgia,Times New Roman, Arial, sans-serif;
+  font-size:16px;
+}
+
+#centro{
+width:900px;
+text-align:center;
+}
+#centro h2#inicioTitulo{
+margin:0 0 20px 0;
+color:#0000ff;
+font-size:32px;
+font-family:Courier New, Courier, mono,Times New Roman, Arial, sans-serif;
+}
+
+#link{
+  margin:30px 0 0 0;
+}
+
+#centro #link a{
+background: #F5DEB3;
+padding:4px;
+border:2px solid #000000;
+font-weight:bold;
+color:#1A1A1A;
+font-size:20px;
+}
+#centro #link a:hover{
+  text-decoration:none;
+}
+
+#mensaje{
+border-bottom:2px #0099FF solid;
+min-height:30px;
+background-color:#F0F8FF;
+display:none;
+padding:10px;
+color:#0099FF;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.negrita{
+font-weight:bold;
+}

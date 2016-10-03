@@ -1,0 +1,67 @@
+@media (max-width: 1024px) {	
+  
+}
+@media (max-width: 1023px) {
+  #centro{
+	  /*padding-top: 60px;*/
+	}
+
+  #izquierda{
+	  /*display: none;*/
+	  top: 50px;
+	  /*min-height: 100%;*/
+	}
+  
+  /*.nav_menu{
+  	margin-bottom: 0px;
+  	position: fixed;
+  	top: 0;
+  	z-index: 9;
+  }*/
+
+  .menu-toogle { 
+      position:fixed; /*Fijamos la hamburgues para que se desplace junto con el menú*/
+    }
+
+
+    .menu-checkbox:checked ~ #izquierda {
+      /*top: 40px;*/
+    }
+    .menu-checkbox:checked ~ #centro {
+      margin-left: 0px;
+    }
+    .menu-checkbox:checked ~ .menu-toogle { 
+      left:10px;
+    }
+    .menu-checkbox:checked ~ #centro .top_nav .navbar-right { 
+      right: 0px;
+    }
+
+}
+
+@media (max-width: 799px){
+  
+}
+
+@media (max-width: 767px) {
+
+
+}
+
+@media (max-width: 640px) {
+
+}
+
+@media (max-width: 480px) {
+
+}
+
+@media (max-width: 479px) {
+
+}
+
+@media (max-width: 320px) {
+	#izquierda{
+		  width: 100%;
+		}
+}

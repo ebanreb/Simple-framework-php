@@ -1,0 +1,1 @@
+<div class="x_panel"><?= Core::breadcrumbs(' » ','Inicio',"users/admin.html");?></div>
