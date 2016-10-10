@@ -499,25 +499,22 @@ public function affected_rows(){
 /*
 **Se da inicio a la transacción
 */  
-public function inicio_transaccion(){
+public function ini_transac(){
     
-    if($this -> use_transac){
     	//$this->conexion->begin_transaction(MYSQLI_TRANS_START_READ_ONLY); //Comienza una transacción. Requiere MySQL 5.6 y superior, y el motor InnoDB 
-	    $this->conexion->autocommit(FALSE);
-    }
-	    
+	    $this->conexion->autocommit(FALSE);   
 }
   
 /*
 **finalizamos la transaccion: si correcta=>COMMIT si error=>ROLLBACK
 */
-public function fin_transaccion_commint(){
+public function transac_commint(){
 
 	$this->conexion->commit();
 
 }
 
-public function fin_transaccion_rollback(){
+public function transac_rollback(){
 	
     $this->conexion->rollback();
     

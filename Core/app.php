@@ -107,7 +107,7 @@ Class App{
 			 $consulta_id_accion=$this -> mybd -> consulta("SELECT id FROM con_ac WHERE alias='".$this -> accion."'");
 			 $id_accion = $this -> mybd -> fetch_array_assoc($consulta_id_accion);
 			 
-			 $consulta_id_control=$this -> mybd -> consulta("SELECT id FROM con_ac WHERE alias='".get_class($this -> control)."'");
+			 $consulta_id_control=$this -> mybd -> consulta("SELECT id FROM con_ac WHERE alias='".strtolower( get_class($this -> control) )."'");
 			 $id_control = $this -> mybd -> fetch_array_assoc($consulta_id_control);
 			 
 			 $consulta_acceso_accion_users = $this -> mybd -> consulta("SELECT acceso FROM acces_users WHERE con_ac_id='".$id_accion['id']."' AND users_id='".$_SESSION['user']['id']."'");
@@ -127,7 +127,7 @@ Class App{
 			         
 			         $acceso_accion_users = $this -> mybd -> fetch_array_assoc($consulta_acceso_accion_users);
 				
-					 if($acceso_accion_users['acceso']){//si acceso permitido
+					 if($acceso_accion_users['acceso']==1){//si acceso permitido
 					   
 					     $this -> acceso = true;
 					   
@@ -137,17 +137,17 @@ Class App{
 			         
 			         $acceso_control_users = $this -> mybd -> fetch_array_assoc($consulta_acceso_control_users);
 				
-					 if($acceso_control_users['acceso']){//si acceso permitido
+					 if($acceso_control_users['acceso']==1){//si acceso permitido
 					   
 					     $this -> acceso = true;
-					   
+					    
 					 }
 						
 			 }elseif($this -> mybd -> num_rows($consulta_acceso_accion_groups)){//si el grupo al que pertenece el usuario tiene definido permisos para esa accion->tabla acces_groups
 			          
 					 $acceso_accion_groups = $this -> mybd -> fetch_array_assoc($consulta_acceso_accion_groups);
 				
-					 if($acceso_accion_groups['acceso']){//si grupo de usuario registrado tiene permisos de acceso
+					 if($acceso_accion_groups['acceso']==1){//si grupo de usuario registrado tiene permisos de acceso
 					   
 						 $this -> acceso = true;
 					   
@@ -157,7 +157,7 @@ Class App{
 			      
 				     $acceso_control_groups=$this -> mybd -> fetch_array_assoc($consulta_acceso_control_groups);
 				
-				     if($acceso_control_groups['acceso']){
+				     if($acceso_control_groups['acceso']==1){
   
 						 $this -> acceso = true;
 						   
