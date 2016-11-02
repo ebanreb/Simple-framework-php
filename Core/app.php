@@ -30,7 +30,8 @@ Class App{
 	 /**
 	 * @var
 	 */
-	const CONTROLLERS_PATH = DOCUMENT_ROOT."App/controles/";
+	 
+	const CONTROLLERS_PATH = "../App/controles/";
 
 	public function __construct(){
         $this -> acceso = false;
@@ -105,6 +106,12 @@ Class App{
 			 $this -> mybd = MySQL::instance();
 						 
 			 $consulta_id_accion=$this -> mybd -> consulta("SELECT id FROM con_ac WHERE alias='".$this -> accion."'");
+
+             if(!$this -> mybd -> num_rows($consulta_id_accion)){
+             	 include DOCUMENT_ROOT . "App/vistas/errores/404.php";
+		         exit;
+             }
+
 			 $id_accion = $this -> mybd -> fetch_array_assoc($consulta_id_accion);
 			 
 			 $consulta_id_control=$this -> mybd -> consulta("SELECT id FROM con_ac WHERE alias='".strtolower( get_class($this -> control) )."'");

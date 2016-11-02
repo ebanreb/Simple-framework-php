@@ -11,10 +11,9 @@ public static function getmodulo($control,$accion){
 
   $aux=$instancia->setvars;
 
-  $$aux[0][0]=$aux[0][1];
-
-
-  return  $$aux[0][0];
+  foreach($aux as $key=>$value){
+    return  $value;
+  }
 
 }
 
@@ -289,15 +288,11 @@ public static function get_idioma(){
 **Headers
 */
 public static function htmlheader(){
-  
-  echo "<script  language='javascript' src=\"".ROOT."js/popcalendar.js\"></script>";
   echo "<script type=\"text/javascript\" src=\"".ROOT."js/funciones.js\"></script>";
   echo "<link type=\"text/css\" href=\"".ROOT."css/google/main.css\" rel=\"stylesheet\" />";
 }
 
 public static function htmlheaderadmin(){
-  
-  echo "<script  language='javascript' src=\"".ROOT."js/popcalendar.js\"></script>";
   echo "<script type=\"text/javascript\" src=\"".ROOT."js/funciones.js\"></script>";
   echo "<link type=\"text/css\" href=\"".ROOT."css/google/main.css\" rel=\"stylesheet\" />";
 }
